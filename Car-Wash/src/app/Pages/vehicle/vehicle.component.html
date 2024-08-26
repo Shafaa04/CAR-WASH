@@ -1,0 +1,135 @@
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <!-- Appointment Bar Line Chart -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Vehicle Lists</h4>
+
+                            <div class="heading-elements">
+                                <button class="btn btn-info btn-min-width mr-1 mb-3" (click)="openDialog()"> Register
+                                    Vehicle</button>
+                            </div>
+                        </div>
+                        <div class="card-content collapse show"><br>
+                            <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+                            <div style="margin:10px 0px 0px 10px;" class="example-form ml-">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Search</mat-label>
+                                    <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="mat-elevation-z8">
+                                <table mat-table [dataSource]="dataSource" matSort>
+
+                                    <!-- ID Column -->
+                                    <ng-container matColumnDef="id">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                                        <td mat-cell *matCellDef="let row;let i = index"> {{1+i}} </td>
+                                    </ng-container>
+
+                                    <!-- Progress Column -->
+                                    <ng-container matColumnDef="carType">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Car Type </th>
+                                        <td mat-cell *matCellDef="let row"> {{row.carType}} </td>
+                                    </ng-container>
+
+
+                                       <!-- Fruit Column -->
+                                       <ng-container matColumnDef="action">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                                        <td mat-cell *matCellDef="let row"> 
+                                            <button class="btn btn-info" (click)="openDialog2(row)">Edit</button>
+                                         </td>
+                                    </ng-container>
+
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                                    <!-- Row shown when there is no matching data. -->
+                                    <tr class="mat-row" *matNoDataRow>
+                                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"
+                                    aria-label="Select page of users"></mat-paginator>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+
+
+<ng-template #distributionDialog>
+    <app-card title="Add Vehicle">
+        <hr>
+        <form [formGroup]="vehicleForm">
+            <div class="row">
+              
+                <div class="col-md-12">
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>car Type</mat-label>
+                        <mat-select formControlName="carType">
+                            <mat-option *ngFor="let type of carType" [value]="type.value">
+                                {{type.value}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+
+        </form><br><br>
+
+        <div class="card-bottom">
+            <button mat-raised-button matDialogClose="yes">Cancel</button> &nbsp;   
+            <button mat-raised-button color="primary" matDialogClose="yes" (click)="onSubmit()">Add</button>
+        </div>
+
+    </app-card>
+</ng-template>
+
+
+
+
+<ng-template #distributionDialog2>
+    <app-card title="Edit Vehicle">
+        <hr>
+        <form [formGroup]="vehicleEditForm">
+            <div class="row">
+             
+                <div class="col-md-12">
+                    <mat-form-field style="width: 100%;" appearance="outline">
+                        <mat-label>car Type</mat-label>
+                        <mat-select formControlName="carType">
+                            <mat-option *ngFor="let type of carType" [value]="type.value">
+                                {{type.value}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+        </form><br><br>
+
+        <div class="card-bottom">
+            <button mat-raised-button matDialogClose="yes">Cancel</button> &nbsp;
+            <button mat-raised-button color="primary" matDialogClose="yes" (click)="onEdit()">Edit</button>
+        </div>
+
+    </app-card>
+</ng-template> 

@@ -1,0 +1,176 @@
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+
+            <div class="row" >
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-truck-pickup font-large-2 success"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Number of Package</h5>
+                                        <h3 class="text-bold-600" *ngIf="carWashReport">{{carWashReport.packages.packages}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-long-arrow-alt-left font-large-2 warning"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Total Request</h5>
+                                        <h3 class="text-bold-600" *ngIf="carWashReport">{{carWashReport.requests.requests}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-users font-large-2 info"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Number of Customers</h5>
+                                        <h3 class="text-bold-600" *ngIf="carWashReport">{{carWashReport.customers.customers}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-user-friends font-large-2 danger"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Number of Employee</h5>
+                                        <h3 class="text-bold-600" *ngIf="carWashReport">{{carWashReport.employees.staffs}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-long-arrow-alt-left  font-large-2 success"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Today's Request</h5>
+                                        <h3 class="text-bold-600" *ngIf="requestReport">{{requestReport.todayBookings.todayBookings}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-long-arrow-alt-left font-large-2 success"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Weekly Request</h5>
+                                        <h3 class="text-bold-600" *ngIf="requestReport">{{requestReport.weeklyBooking.weeklyBookings}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-long-arrow-alt-left  font-large-2 success"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Monthly Request</h5>
+                                        <h3 class="text-bold-600" *ngIf="requestReport">{{requestReport.monthlyBooking.monthlyBooking}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-long-arrow-alt-left  font-large-2 success"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Annual Request</h5>
+                                        <h3 class="text-bold-600" *ngIf="requestReport">{{requestReport.annualBookings.annualBookings}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="row" >
+            <div class="col-8"  *ngIf="check2">
+                <div class="card">
+                    <div class="card-header">
+                    <h3 class="text-center">Request Report Monthly</h3>
+                    <app-customer-bar-chart></app-customer-bar-chart>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4" *ngIf="check">
+            <div class="card">
+                <div class="card-header">
+                <h3 class="text-center">Staff by Gender Informations</h3>
+                <div class="d-flex justify-content-center">
+                    <app-customer-pie-chart></app-customer-pie-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+        </div>
+    </div>
+</div>

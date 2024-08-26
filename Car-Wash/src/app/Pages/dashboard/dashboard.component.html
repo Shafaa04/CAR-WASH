@@ -1,0 +1,140 @@
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <div class="row" >
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-truck-pickup font-large-2 success"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Number of Car Wash</h5>
+                                        <h3 class="text-bold-600" *ngIf="adminReport">{{adminReport.carwashes}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-car font-large-2 warning"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Number of Vehicles</h5>
+                                        <h3 class="text-bold-600" *ngIf="adminReport">{{adminReport.vehicles}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-list font-large-2 info"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Number of Service Available</h5>
+                                        <h3 class="text-bold-600" *ngIf="adminReport">{{adminReport.services}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-user-friends font-large-2 danger"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Number of Employee</h5>
+                                        <h3 class="text-bold-600" *ngIf="adminReport">{{adminReport.employees}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-truck-pickup font-large-2 success"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Number of Package</h5>
+                                        <h3 class="text-bold-600" *ngIf="adminReport">{{adminReport.packages}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="la la-user-friends font-large-2 danger"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h5 class="text-muted text-bold-500">Number of Customers</h5>
+                                        <h3 class="text-bold-600" *ngIf="adminReport">{{adminReport.customers}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-8">
+                    <div class="card">
+                     
+                        <div id="map" style="height: 400px;width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                        <h3 class="text-center">Employee by Car Wash Summary</h3>
+                        <div class="d-flex justify-content-center">
+                            <app-piechart></app-piechart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- END: Content-->

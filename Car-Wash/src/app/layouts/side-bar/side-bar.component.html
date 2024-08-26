@@ -1,0 +1,62 @@
+
+    <!-- BEGIN: Main Menu-->
+
+    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
+        <div class="main-menu-content">
+          <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item"><a  (click)="Home()" style="cursor: pointer;" *ngIf="role=='ADMINISTRATOR'">
+              <i class="la la-home"></i><span class="menu-title" data-i18n="Report">Dashboard</span></a>
+            </li>
+            <li class=" nav-item"><a  (click)="Dashboard()" style="cursor: pointer;" *ngIf="role=='CAR WASH'">
+              <i class="la la-home"></i><span class="menu-title" data-i18n="Report">Dashboard</span></a>
+            </li>
+            <li class=" nav-item" *ngIf="role=='ADMINISTRATOR'"><a ><i class="la la-cogs"></i>
+              <span class="menu-title" data-i18n="Invoice">Setting</span></a>
+              <ul class="menu-content">
+                <li><a class="menu-item" routerLink="role"><i class="la la-cog"></i>&nbsp;<span data-i18n="Invoice List">Role</span></a></li>
+                <li><a class="menu-item" routerLink="vehicle"><i class="la la-cog"></i>&nbsp;<span data-i18n="Invoice Summary">Vehicle</span></a></li>
+                <li><a class="menu-item" routerLink="service-available"><i class="la la-cog"></i>&nbsp;<span data-i18n="Invoice Template">Service Available</span></a>
+                </li>
+
+              </ul>
+            </li>  
+      
+          
+            <li class=" nav-item" *ngIf="role=='ADMINISTRATOR'"><a routerLink="car-wash"><i class="la la-bus"></i>
+              <span class="menu-title" data-i18n="Report">Car Wash</span></a> </li>
+
+              <li class=" nav-item"  *ngIf="role=='ADMINISTRATOR'"><a routerLink="employee"><i class="la la-users"></i>
+                <span class="menu-title" data-i18n="Report">Employee</span></a> 
+              </li> 
+
+              <li class=" nav-item"  *ngIf="role=='CAR WASH'"><a routerLink="employee"><i class="la la-users"></i>
+                <span class="menu-title" data-i18n="Report">Employee</span></a> 
+              </li> 
+
+              <li class=" nav-item"  *ngIf="role=='ADMINISTRATOR'"><a routerLink="customer"><i class="la la-users"></i>
+                <span class="menu-title" data-i18n="Report">Customer</span></a> 
+                
+              </li> 
+              <li class=" nav-item" *ngIf="role=='CAR WASH'"><a routerLink="request"><i class="la la-users"></i>
+                <span class="menu-title" data-i18n="Report">Request</span></a> 
+              </li> 
+                 <li class=" nav-item" ><a routerLink="package"><i class="la la-users"></i>
+                  <span class="menu-title" data-i18n="Report">Package Available</span></a> </li>
+        
+
+              <li class=" nav-item" *ngIf="role=='CAR WASH'"><a routerLink="car-wash-report"><i class="la la-bar-chart "></i>
+                <span class="menu-title" data-i18n="Report">Report</span></a> 
+              </li>
+              <li class=" nav-item" *ngIf="role=='ADMINISTRATOR'"><a routerLink="report"><i class="la la-bar-chart "></i>
+                <span class="menu-title" data-i18n="Report">Report</span></a> 
+              </li>
+              <li class=" nav-item" *ngIf="role=='ADMINISTRATOR'"><a routerLink="user-management"><i class="la la-users"></i>
+                <span class="menu-title" data-i18n="Report">User Management</span></a> 
+              </li>
+
+              
+          </ul>
+        </div>
+      </div>
+  
+      <!-- END: Main Menu-->
